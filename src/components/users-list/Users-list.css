@@ -1,0 +1,13 @@
+.Users-list__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Users-list__list-item {
+    cursor: pointer;
+}
+
+.Users-list__list-item + .Users-list__list-item {
+    margin-top: 5px;
+}

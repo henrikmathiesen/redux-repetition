@@ -1,3 +1,22 @@
+## Redux
+
+React JS / Redux Tutorial - thenewboston  
+https://www.youtube.com/watch?v=DiLVAXlVYR0&list=PL6gx4Cwl9DGBbSLZjvleMwldX8jGgXV6a
+
+### Info
+
+Store: All our application state
+
+Providers: Makes Store available to all Smart Components (sometimes called Containers)
+
+Smart Components: Get state as props and render view
+
+Actions: Something happened that should change the state
+
+Reducers: Take an Action and update part of the state, then send new state to the Store
+
+## Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

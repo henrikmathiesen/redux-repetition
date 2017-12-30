@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+.App-main {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.App-main__intro {
+  font-size: 1.8rem;
+}

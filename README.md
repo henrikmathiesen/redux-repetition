@@ -5,7 +5,7 @@ https://www.youtube.com/watch?v=DiLVAXlVYR0&list=PL6gx4Cwl9DGBbSLZjvleMwldX8jGgX
 
 ### Info
 
-Store: All our application state
+Store: All our application state (as one big object)
 
 Providers: Makes Store available to all Smart Components (sometimes called Containers)
 

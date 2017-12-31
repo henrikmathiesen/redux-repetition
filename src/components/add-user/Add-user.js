@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 import './Add-user.css';
-import FormControlText from '../form-controls/Form-control-text';
+import FormControlText from '../form-controls/form-control-text/Form-control-text';
+import FormControlButton from '../form-controls/form-control-button/Form-control-button';
 
 class AddUser extends Component {
 
@@ -25,7 +26,7 @@ class AddUser extends Component {
                     <FormControlText
                         id="thumbnail"
                         label="Thumbnail url" />
-                    <button className="Add-user_submit-button">Submit</button>
+                    <FormControlButton background="success" />
                 </div>
             </div>
         );

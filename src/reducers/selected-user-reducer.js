@@ -1,8 +1,8 @@
-import { usersActions } from '../actions/users-actions';
+import usersActionsConstant from '../constants/actions/users-actions-contant';
 
 const selectedUserReducer = (state = null, action) => {
     switch (action.type) {
-        case usersActions.SELECT_USER: {
+        case usersActionsConstant.SELECT_USER: {
             return action.user;
         }
         default: {

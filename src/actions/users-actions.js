@@ -1,10 +1,8 @@
-export const usersActions = {
-    SELECT_USER: 'SELECT_USER'
-};
+import usersActionsConstant from '../constants/actions/users-actions-contant';
 
 export const selectUser = (user) => { 
     return {
-        type: usersActions.SELECT_USER,
+        type: usersActionsConstant.SELECT_USER,
         user
     }
 };

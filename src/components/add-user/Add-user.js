@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import './Add-user.css';
+import colorsConstant from '../../constants/colors-constant';
 import FormControlText from '../form-controls/form-control-text/Form-control-text';
 import FormControlButton from '../form-controls/form-control-button/Form-control-button';
 
@@ -26,7 +27,7 @@ class AddUser extends Component {
                     <FormControlText
                         id="thumbnail"
                         label="Thumbnail url" />
-                    <FormControlButton background="success" />
+                    <FormControlButton background={colorsConstant.SUCCESS} />
                 </div>
             </div>
         );

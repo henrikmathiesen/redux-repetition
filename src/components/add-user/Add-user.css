@@ -1,12 +1,13 @@
 .Add-user {
     padding: 1.5rem;
-    display: flex;
-    justify-content: center;
 }
 
 .Add-user__inner {
     border: 1px solid lightgray;
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .Add-user__header {

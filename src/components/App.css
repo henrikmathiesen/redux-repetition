@@ -14,12 +14,14 @@
 }
 
 @media only screen and (min-width:768px) {
-  .App-main__users {
+  .App-main__users,
+  .App-main__add-users {
     display: flex;
     justify-content: center;
   }
 
-  .App-main__users > div {
+  .App-main__users > div,
+  .App-main__add-users > div {
     width: 35rem;
   }
 }

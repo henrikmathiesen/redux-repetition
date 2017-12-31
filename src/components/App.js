@@ -17,7 +17,9 @@ const App = () => (
         <UsersList />
         <UserDetail />
       </div>
-      <AddUser />
+      <div className="App-main__add-users">
+        <AddUser />
+      </div>
     </main>
   </div>
 );

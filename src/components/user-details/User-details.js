@@ -5,34 +5,38 @@ import './User-details.css';
 
 class UserDetails extends Component {
 
-    renderUserImage() {
-        if(!this.props.user.thumbnail) {
+    renderUserThumbnail() {
+        if (!this.props.user.thumbnail) {
             return null;
         }
 
         return (<img src={this.props.user.thumbnail} alt="" />);
     }
 
-    render() {
-        if (!this.props.user) {
+    renderUserDetails() {
+        if (!this.props.user) { 
             return (
-                <div className="User-details">
-                    <div className="User-details__inner">
-                        <h2 className="User-details__header">Select a user ...</h2>
-                    </div>
+                <div className="User-details__inner">
+                    <h2 className="User-details__header">Select a user ...</h2>
                 </div>
             );
-        }
-
-        return (
-            <div className="User-details">
+        } else {
+            return (
                 <div className="User-details__inner">
                     <h2 className="User-details__header">User Details</h2>
-                    {this.renderUserImage()}
+                    {this.renderUserThumbnail()}
                     <h3>{this.props.user.first} {this.props.user.last}</h3>
                     <h3>Age: {this.props.user.age}</h3>
                     <p>Description: {this.props.user.description}</p>
                 </div>
+            );
+        }
+    }
+
+    render() {
+        return (
+            <div className="User-details">
+                {this.renderUserDetails()}
             </div>
         );
     }

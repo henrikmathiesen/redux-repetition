@@ -17,18 +17,22 @@ class UserDetails extends Component {
         if (!this.props.user) {
             return (
                 <div className="User-details">
-                    <h2>Select a user ...</h2>
+                    <div className="User-details__inner">
+                        <h2 className="User-details__header">Select a user ...</h2>
+                    </div>
                 </div>
             );
         }
 
         return (
             <div className="User-details">
-                <h2>User Details</h2>
-                {this.renderUserImage()}
-                <h3>{this.props.user.first} {this.props.user.last}</h3>
-                <h3>Age: {this.props.user.age}</h3>
-                <p>Description: {this.props.user.description}</p>
+                <div className="User-details__inner">
+                    <h2 className="User-details__header">User Details</h2>
+                    {this.renderUserImage()}
+                    <h3>{this.props.user.first} {this.props.user.last}</h3>
+                    <h3>Age: {this.props.user.age}</h3>
+                    <p>Description: {this.props.user.description}</p>
+                </div>
             </div>
         );
     }

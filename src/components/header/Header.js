@@ -5,8 +5,10 @@ import logo from './logo.svg';
 
 const Header = () => (
     <header className="App-header">
-        <img src={logo} className="App-header__logo" alt="logo" />
-        <h1 className="App-header__title">Welcome to Redux</h1>
+        <div className="App-header__inner">
+            <img src={logo} className="App-header__logo" alt="logo" />
+            <h1 className="App-header__title">Welcome to Redux</h1>
+        </div>
     </header>
 );
 

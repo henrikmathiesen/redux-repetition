@@ -9,6 +9,8 @@
 
 .App-main__intro {
   font-size: 1.8rem;
+  margin: 0;
+  padding: 1.5rem;
 }
 
 @media only screen and (min-width:768px) {

@@ -22,10 +22,12 @@ class UsersList extends Component {
     render() {
         return (
             <div className="Users-list">
-                <h2>Users List</h2>
-                <ul className="Users-list__list">
-                    {this.renderUserItems()}
-                </ul>
+                <div className="Users-list__inner">
+                    <h2 className="Users-list__header">Users List</h2>
+                    <ul className="Users-list__list">
+                        {this.renderUserItems()}
+                    </ul>
+                </div>
             </div>
         );
     }

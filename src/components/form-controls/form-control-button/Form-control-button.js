@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './Form-control-button.css';
-import colorsConstant from '../../../constants/colors-constant';
+import colorsConstant from 'constants/colors-constant';
 
 class FormControlButton extends Component {
 

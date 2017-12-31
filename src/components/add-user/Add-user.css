@@ -1,8 +1,18 @@
 .Add-user {
     padding: 1.5rem;
+    display: flex;
+    justify-content: center;
 }
 
 .Add-user__inner {
     border: 1px solid lightgray;
     padding: 1.5rem;
+}
+
+.Add-user__header {
+    margin-top: 0;
+}
+
+.Add-user_submit-button {
+    background-color: lightskyblue;
 }

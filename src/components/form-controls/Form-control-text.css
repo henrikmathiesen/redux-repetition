@@ -1,0 +1,14 @@
+.Form-control-text {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.Form-control-text + .Form-control-text {
+    margin-top: 0.5rem;
+}
+
+.Form-control-text__input {
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+}

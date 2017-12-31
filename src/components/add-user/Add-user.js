@@ -1,32 +1,31 @@
 import React, { Component } from 'react';
+
 import './Add-user.css';
+import FormControlText from '../form-controls/Form-control-text';
 
 class AddUser extends Component {
 
     render() {
-        return(
+        return (
             <div className="Add-user">
                 <div className="Add-user__inner">
-                    <div>
-                        <label htmlFor="first">First Name</label>
-                        <input id="first" type="text" />
-                    </div>
-                    <div>
-                        <label htmlFor="last">Last Name</label>
-                        <input id="last" type="text" />
-                    </div>
-                    <div>
-                        <label htmlFor="age">Age</label>
-                        <input id="age" type="text" />
-                    </div>
-                    <div>
-                        <label htmlFor="description">Description</label>
-                        <input id="description" type="text" />
-                    </div>
-                    <div>
-                        <label htmlFor="thumbnail">Thumbnail url</label>
-                        <input id="thumbnail" type="text" />
-                    </div>
+                    <h2 className="Add-user__header">Add user</h2>
+                    <FormControlText
+                        id="first"
+                        label="First Name" />
+                    <FormControlText
+                        id="last"
+                        label="Last Name" />
+                    <FormControlText
+                        id="age"
+                        label="Age" />
+                    <FormControlText
+                        id="description"
+                        label="Description" />
+                    <FormControlText
+                        id="thumbnail"
+                        label="Thumbnail url" />
+                    <button className="Add-user_submit-button">Submit</button>
                 </div>
             </div>
         );

@@ -4,8 +4,17 @@ import { connect } from 'react-redux';
 import './User-details.css';
 
 class UserDetails extends Component {
+
+    renderUserImage() {
+        if(!this.props.user.thumbnail) {
+            return null;
+        }
+
+        return (<img src={this.props.user.thumbnail} alt="" />);
+    }
+
     render() {
-        if(!this.props.user) {
+        if (!this.props.user) {
             return (
                 <div className="User-details">
                     <h2>Select a user ...</h2>
@@ -16,7 +25,7 @@ class UserDetails extends Component {
         return (
             <div className="User-details">
                 <h2>User Details</h2>
-                <img src={this.props.user.thumbnail} alt="" />
+                {this.renderUserImage()}
                 <h3>{this.props.user.first} {this.props.user.last}</h3>
                 <h3>Age: {this.props.user.age}</h3>
                 <p>Description: {this.props.user.description}</p>
@@ -25,7 +34,7 @@ class UserDetails extends Component {
     }
 }
 
-function mapStateToProps(state) { 
+function mapStateToProps(state) {
     return {
         user: state.selectedUser
     }

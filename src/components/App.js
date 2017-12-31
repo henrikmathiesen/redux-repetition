@@ -4,6 +4,7 @@ import './App.css';
 import Header from './header/Header';
 import UsersList from './users-list/Users-list';
 import UserDetail from './user-details/User-details';
+import AddUser from './add-user/Add-user';
 
 const App = () => (
   <div className="App">
@@ -16,6 +17,7 @@ const App = () => (
         <UsersList />
         <UserDetail />
       </div>
+      <AddUser />
     </main>
   </div>
 );

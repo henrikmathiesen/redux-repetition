@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 
 import './Add-user.css';
 import colorsConstant from 'constants/colors-constant';
-import FormControlText from 'components/form-controls/form-control-text/Form-control-text';
-import FormControlButton from 'components/form-controls/form-control-button/Form-control-button';
+import { FormControlButton, FormControlText } from 'components/form-controls';
 
 class AddUser extends Component {
 

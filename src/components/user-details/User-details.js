@@ -21,7 +21,7 @@ class UserDetails extends Component {
 
 function mapStateToProps(state) { 
     return {
-        user: state.activeUser
+        user: state.selectedUser
     }
 }
 

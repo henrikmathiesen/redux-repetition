@@ -3,7 +3,6 @@ export const usersActions = {
 };
 
 export const selectUser = (user) => { 
-    console.log('You clicked on: ', user.first);
     return {
         type: usersActions.SELECT_USER,
         user

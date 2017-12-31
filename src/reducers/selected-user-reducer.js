@@ -1,6 +1,6 @@
 import { usersActions } from '../actions/users-actions';
 
-const activeUserReducer = (state = null, action) => {
+const selectedUserReducer = (state = null, action) => {
     switch (action.type) {
         case usersActions.SELECT_USER: {
             return action.user;
@@ -11,4 +11,4 @@ const activeUserReducer = (state = null, action) => {
     }
 };
 
-export default activeUserReducer;
+export default selectedUserReducer;

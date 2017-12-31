@@ -12,3 +12,8 @@
 .Add-user__header {
     margin-top: 0;
 }
+
+.Add-user__button-container {
+    text-align: right;
+    margin-top: 1.5rem;
+}

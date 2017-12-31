@@ -26,7 +26,9 @@ class AddUser extends Component {
                     <FormControlText
                         id="thumbnail"
                         label="Thumbnail url" />
-                    <FormControlButton background={colorsConstant.SUCCESS} />
+                    <div className="Add-user__button-container">
+                        <FormControlButton background={colorsConstant.SUCCESS} />
+                    </div>
                 </div>
             </div>
         );

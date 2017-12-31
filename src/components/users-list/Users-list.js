@@ -21,7 +21,7 @@ class UsersList extends Component {
 
     render() {
         return (
-            <div>
+            <div className="Users-list">
                 <h2>Users List</h2>
                 <ul className="Users-list__list">
                     {this.renderUserItems()}

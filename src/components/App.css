@@ -10,3 +10,15 @@
 .App-main__intro {
   font-size: 1.8rem;
 }
+
+@media only screen and (min-width:768px) {
+  .App-main__users {
+    display: flex;
+    justify-content: center;
+  }
+
+  .App-main__users > div {
+    width: 350px;
+  }
+}
+

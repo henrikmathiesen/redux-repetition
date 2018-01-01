@@ -6,3 +6,10 @@ export const newUser = (user) => {
         user
     }
 };
+
+export const deleteUser = (id) => {
+    return {
+        type: usersActionsConstant.DELETE_USER,
+        id
+    }
+}

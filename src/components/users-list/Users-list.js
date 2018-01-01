@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import './Users-list.css';
 import { selectUser } from 'actions/select-user-actions';
+import { deleteUser } from 'actions/users-actions';
 
 class UsersList extends Component {
 
@@ -12,9 +13,9 @@ class UsersList extends Component {
             (
                 <li className="Users-list__list-item"
                     data-id={user.id}
-                    key={user.id}
-                    onClick={() => this.props.selectUser(user)}>
-                    {user.first} {user.last}
+                    key={user.id}>
+                    <span onClick={() => this.props.selectUser(user)}>{user.first} {user.last}</span>
+                    <span onClick={() => this.props.deleteUser(user.id)}>[DEL]</span>
                 </li>
             )
         )
@@ -41,7 +42,7 @@ function mapStateToProps(state) {
 }
 
 function matchDispatchToProps(dispatch) {
-    return bindActionCreators({ selectUser }, dispatch);
+    return bindActionCreators({ selectUser, deleteUser }, dispatch);
 }
 
 export default connect(mapStateToProps, matchDispatchToProps)(UsersList);

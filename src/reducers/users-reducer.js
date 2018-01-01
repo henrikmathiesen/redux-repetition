@@ -13,6 +13,9 @@ const usersReducer = (state = seedUsers(), action) => {
                 ...state, newUser
             ];
         }
+        case usersActionsConstant.DELETE_USER: {
+            return state.filter(u => u.id !== action.id);
+        }
         default: {
             return state;
         }

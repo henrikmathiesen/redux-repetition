@@ -1,20 +1,39 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 import './Add-user.css';
 import colorsConstant from 'constants/colors-constant';
+import { newUser } from 'actions/users-actions';
 import { FormControlButton, FormControlText } from 'components/form-controls';
 
 class AddUser extends Component {
 
+    constructor(){
+        super();
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        
+        this.user = {
+            id: null,
+            first: null,
+            last: null,
+            age: null,
+            description: null,
+            thumbnail: null
+        };
+    }
+
     handleSubmit(event) {
         event.preventDefault();
-        console.log('handleSubmit', event);
+        this.props.newUser(this.user);
     }
 
     handleChange(event) {
-        const id = event.target.id;
-        const value = event.target.value;
-        console.log('handleChange', { id, value });
+        const user = Object.assign({}, this.user);
+        user[event.target.id] = event.target.value;
+        this.user = user;
     }
 
     render() {
@@ -54,4 +73,8 @@ class AddUser extends Component {
 
 }
 
-export default AddUser;
+function matchDispatchToProps(dispatch) {
+    return bindActionCreators({ newUser }, dispatch);
+}
+
+export default connect(null, matchDispatchToProps)(AddUser);

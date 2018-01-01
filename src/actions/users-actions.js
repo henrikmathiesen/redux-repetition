@@ -6,3 +6,10 @@ export const selectUser = (user) => {
         user
     }
 };
+
+export const newUser = (user) => {
+    return {
+        type: usersActionsConstant.NEW_USER,
+        user
+    }
+};

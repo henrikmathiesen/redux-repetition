@@ -1,30 +1,23 @@
-const usersReducer = () => {
-    return [
-        {
-            id: 1,
-            first: "Adam",
-            last: "Robertsson",
-            age: 71,
-            description: "Adam is a React developer and a funny guy.",
-            thumbnail: "http://www.fillmurray.com/200/300"
-        },
-        {
-            id: 2,
-            first: "Zorry",
-            last: "Xobi",
-            age: 27,
-            description: "Zorry is awesome with a sword.",
-            thumbnail: "http://www.fillmurray.com/g/200/300"
-        },
-        {
-            id: 3,
-            first: "Ceasar",
-            last: "Fishling",
-            age: 24,
-            description: "Ceasar likes icecream.",
-            thumbnail: "http://www.stevensegallery.com/200/300"
+import usersActionsConstant from 'constants/actions/users-actions-contant';
+import seedUsers from 'utils/seedUsers';
+
+const usersReducer = (state = seedUsers(), action) => {
+
+    switch(action.type) {
+        case usersActionsConstant.NEW_USER: {
+            const newUser = Object.assign({}, action.user);
+            newUser.id = state[state.length - 1].id + 1;
+
+            return [
+                ...state, newUser
+            ];
         }
-    ];
+        default: {
+            return state;
+        }
+    }
+
+    
 };
 
 export default usersReducer;

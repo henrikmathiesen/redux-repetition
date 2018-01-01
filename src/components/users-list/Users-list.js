@@ -19,7 +19,6 @@ class UsersList extends Component {
                     key={user.id}>
                     <span className="Users-list__list-item-text" onClick={() => this.props.selectUser(user)}>{user.first} {user.last}</span>
                     <FormControlButton
-                        shouldSubmit={false}
                         label="Remove"
                         background={colorsConstant.DANGER}
                         size={sizesConstant.SMALL}

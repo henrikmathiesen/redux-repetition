@@ -6,7 +6,8 @@
     margin: 0;
     padding: 0;
     font-size: 1.6rem;
-    color: lightblue;
+    text-transform: uppercase;
+    color: black;
 }
 
 .Form-control-button--small {
@@ -20,12 +21,8 @@
 
 .Form-control-button--success {
     background-color: skyblue;
-    text-transform: uppercase;
-    color: black;
 }
 
 .Form-control-button--danger {
     background-color: lightcoral;
-    text-transform: uppercase;
-    color: black;
 }

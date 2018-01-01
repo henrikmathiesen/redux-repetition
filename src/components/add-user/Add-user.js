@@ -3,7 +3,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import './Add-user.css';
-import colorsConstant from 'constants/colors-constant';
 import { newUser } from 'actions/users-actions';
 import { FormControlButton, FormControlText } from 'components/form-controls';
 
@@ -73,7 +72,9 @@ class AddUser extends Component {
                             value={this.state.user.thumbnail}
                             onChange={this.handleChange} />
                         <div className="Add-user__button-container">
-                            <FormControlButton shouldSubmit={true} background={colorsConstant.SUCCESS} />
+                            <FormControlButton 
+                                shouldSubmit={true} 
+                                label="Submit" />
                         </div>
                     </form>
                 </div>

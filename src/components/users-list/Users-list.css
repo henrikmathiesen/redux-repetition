@@ -24,3 +24,7 @@
 .Users-list__list-item + .Users-list__list-item {
     margin-top: 0.5rem;
 }
+
+.Users-list__list-item-text {
+    margin-right: 0.5rem;
+}

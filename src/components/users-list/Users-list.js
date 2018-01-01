@@ -3,8 +3,11 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import './Users-list.css';
+import colorsConstant from 'constants/colors-constant';
+import sizesConstant from 'constants/sizes-constant';
 import { selectUser } from 'actions/select-user-actions';
 import { deleteUser } from 'actions/users-actions';
+import { FormControlButton } from 'components/form-controls';
 
 class UsersList extends Component {
 
@@ -14,8 +17,13 @@ class UsersList extends Component {
                 <li className="Users-list__list-item"
                     data-id={user.id}
                     key={user.id}>
-                    <span onClick={() => this.props.selectUser(user)}>{user.first} {user.last}</span>
-                    <span onClick={() => this.props.deleteUser(user.id)}>[DEL]</span>
+                    <span className="Users-list__list-item-text" onClick={() => this.props.selectUser(user)}>{user.first} {user.last}</span>
+                    <FormControlButton
+                        shouldSubmit={false}
+                        label="Remove"
+                        background={colorsConstant.DANGER}
+                        size={sizesConstant.SMALL}
+                        onClick={() => this.props.deleteUser(user.id)} />
                 </li>
             )
         )

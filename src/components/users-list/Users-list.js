@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import './Users-list.css';
-import { selectUser } from 'actions/users-actions';
+import { selectUser } from 'actions/select-user-actions';
 
 class UsersList extends Component {
 

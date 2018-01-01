@@ -7,6 +7,7 @@ const usersReducer = (state = seedUsers(), action) => {
         case usersActionsConstant.NEW_USER: {
             const newUser = Object.assign({}, action.user);
             newUser.id = state[state.length - 1].id + 1;
+            newUser.age = parseInt(newUser.age, 10);
 
             return [
                 ...state, newUser

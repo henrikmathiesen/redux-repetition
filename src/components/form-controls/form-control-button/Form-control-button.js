@@ -18,7 +18,7 @@ class FormControlButton extends Component {
 
     render() {
         return (
-            <button className={"Form-control-button" + this.renderCssClass()}>Submit</button>
+            <button type={this.props.shouldSubmit ? "submit" : "button"} className={"Form-control-button" + this.renderCssClass()}>Submit</button>
         );
     }
 }

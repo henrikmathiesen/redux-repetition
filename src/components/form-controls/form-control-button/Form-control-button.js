@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import './Form-control-button.css';
 import colorsConstant from 'constants/colors-constant';
@@ -56,5 +57,13 @@ class FormControlButton extends Component {
         );
     }
 }
+
+FormControlButton.propTypes = {
+    label: PropTypes.string.isRequired,
+    background: PropTypes.string,
+    onClick: PropTypes.func,
+    shouldSubmit: PropTypes.bool,
+    size: PropTypes.string
+};
 
 export default FormControlButton;

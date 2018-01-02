@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import './Form-control-text.css';
 
 const FormControlText = ({ id, label, value, onChange }) => (
@@ -12,5 +14,15 @@ const FormControlText = ({ id, label, value, onChange }) => (
             onChange={onChange} />
     </div>
 );
+
+FormControlText.propTypes = {
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+    value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+    ]).isRequired
+};
 
 export default FormControlText;

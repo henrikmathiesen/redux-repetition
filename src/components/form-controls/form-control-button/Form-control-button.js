@@ -8,7 +8,7 @@ class FormControlButton extends Component {
 
     constructor() {
         super();
-        this.onClick = this.onClick.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     renderBackgroundCssClass() {
@@ -39,7 +39,7 @@ class FormControlButton extends Component {
         }
     }
 
-    onClick() {
+    handleClick() {
         if (!this.props.onClick) {
             return;
         }
@@ -52,7 +52,7 @@ class FormControlButton extends Component {
             <button
                 type={this.props.shouldSubmit ? "submit" : "button"}
                 className={"Form-control-button" + this.renderBackgroundCssClass() + this.renderSizeCssClass()}
-                onClick={this.onClick}>{this.props.label}</button>
+                onClick={this.handleClick}>{this.props.label}</button>
         );
     }
 }

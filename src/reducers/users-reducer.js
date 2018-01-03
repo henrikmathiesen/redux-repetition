@@ -6,7 +6,9 @@ const usersReducer = (state = seedUsers(), action) => {
     switch(action.type) {
         case usersActionsConstant.NEW_USER: {
             const newUser = Object.assign({}, action.user);
-            newUser.id = state[state.length - 1].id + 1;
+            const latestUser = state[state.length - 1];
+            
+            newUser.id = latestUser ? (latestUser.id + 1) : 1;
             newUser.age = parseInt(newUser.age, 10);
 
             return [

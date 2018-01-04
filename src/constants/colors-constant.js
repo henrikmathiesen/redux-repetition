@@ -1,6 +1,7 @@
 const colorsConstant = {
+    DANGER: 'DANGER',
     SUCCESS: 'SUCCESS',
-    DANGER: 'DANGER'
+    WARNING: 'WARNING',
 };
 
 export default colorsConstant;

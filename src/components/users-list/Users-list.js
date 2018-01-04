@@ -17,12 +17,16 @@ class UsersList extends Component {
                 <li className="Users-list__list-item"
                     data-id={user.id}
                     key={user.id}>
-                    <span className="Users-list__list-item-text" onClick={() => this.props.selectUser(user)}>{user.first} {user.last}</span>
+                    <span onClick={() => this.props.selectUser(user)}>{user.first} {user.last}</span>
                     <FormControlButton
                         label="Remove"
                         background={colorsConstant.DANGER}
                         size={sizesConstant.SMALL}
                         onClick={() => this.props.deleteUser(user.id)} />
+                    <FormControlButton
+                        label="Edit" 
+                        background={colorsConstant.WARNING}
+                        size={sizesConstant.SMALL} />
                 </li>
             )
         )

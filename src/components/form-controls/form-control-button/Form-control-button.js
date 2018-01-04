@@ -14,11 +14,14 @@ class FormControlButton extends Component {
 
     renderBackgroundCssClass() {
         switch (this.props.background) {
+            case colorsConstant.DANGER: {
+                return ' Form-control-button--danger';
+            }
             case colorsConstant.SUCCESS: {
                 return ' Form-control-button--success';
             }
-            case colorsConstant.DANGER: {
-                return ' Form-control-button--danger';
+            case colorsConstant.WARNING: {
+                return ' Form-control-button--warning'
             }
             default: {
                 return ' Form-control-button--success';

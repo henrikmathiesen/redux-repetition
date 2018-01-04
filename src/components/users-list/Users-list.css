@@ -25,6 +25,6 @@
     margin-top: 0.5rem;
 }
 
-.Users-list__list-item-text {
-    margin-right: 0.5rem;
+.Users-list__list-item button {
+    margin-left: 0.5rem;
 }

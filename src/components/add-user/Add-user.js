@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import './Add-user.css';
+import validate from 'utils/validate';
 import { newUser } from 'actions/users-actions';
 import { FormControlButton, FormControlText } from 'components/form-controls';
 
@@ -23,15 +24,37 @@ class AddUser extends Component {
             thumbnail: ''
         }
 
+        this.validation = {
+            userHasTriedSubmitForm: false,
+            formIsValid: false,
+            requiredRules: {
+                id: false,
+                first: true,
+                last: true,
+                age: true,
+                description: true,
+                thumbnail: false
+            }
+        };
+
         this.state = {
-            user: this.emptyUser
+            user: this.emptyUser,
+            showValidationError: false
         };
     }
 
     handleSubmit(event) {
         event.preventDefault();
-        this.props.newUser(this.state.user);
-        this.setState({ user: this.emptyUser });
+
+        this.validation.userHasTriedSubmitForm = true;
+        this.validation.formIsValid = validate(this.state.user, this.validation.requiredRules);
+
+        this.setState({ showValidationError: this.validation.userHasTriedSubmitForm && !this.validation.formIsValid });
+
+        if (this.validation.formIsValid) {
+            this.props.newUser(this.state.user);
+            this.setState({ user: this.emptyUser });
+        }
     }
 
     handleChange(event) {
@@ -45,6 +68,7 @@ class AddUser extends Component {
             <div className="Add-user">
                 <div className="Add-user__inner">
                     <h2 className="Add-user__header">Add user</h2>
+                    {this.state.showValidationError ? <p className="Add-user__validation-message">All fields except thumbnail are required</p> : null}
                     <form onSubmit={this.handleSubmit}>
                         <FormControlText
                             id="first"
@@ -72,8 +96,8 @@ class AddUser extends Component {
                             value={this.state.user.thumbnail}
                             onChange={this.handleChange} />
                         <div className="Add-user__button-container">
-                            <FormControlButton 
-                                shouldSubmit={true} 
+                            <FormControlButton
+                                shouldSubmit={true}
                                 label="Submit" />
                         </div>
                     </form>

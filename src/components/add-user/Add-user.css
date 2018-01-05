@@ -18,11 +18,6 @@
     font-size: 1.2rem;
     margin-top: 0;
     color: lightcoral;
-    display: none;
-}
-
-.Add-user__validation-message--show {
-    display: block;
 }
 
 .Add-user__button-container {

@@ -17,7 +17,7 @@ Reducers: Take an Action and update part of the state, then send new state to th
 
 ### Form validation
 
-We are going to try https://github.com/cferdinandi/validate
+We are going to try https://github.com/cferdinandi/validate . I dont think it is a good fit for a react application though, so we dont use it
 
 ## Create React App
 

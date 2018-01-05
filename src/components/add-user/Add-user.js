@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import './Add-user.css';
 import validate from 'utils/validate';
 import { newUser } from 'actions/users-actions';
-import { FormControlButton, FormControlText } from 'components/form-controls';
+import { FormControlButton, FormControlText, FormValidationMessage } from 'components/form-controls';
 
 class AddUser extends Component {
 
@@ -63,9 +63,11 @@ class AddUser extends Component {
             <div className="Add-user">
                 <div className="Add-user__inner">
                     <h2 className="Add-user__header">Add user</h2>
-                    <p className={'Add-user__validation-message' + (this.state.showValidationError ? ' Add-user__validation-message--error' : '')}>
-                        * All fields except thumbnail are required
-                    </p>
+                    
+                    <FormValidationMessage  
+                        shouldAlert={this.state.showValidationError}
+                        message="All fields except thumbnail are required" />
+
                     <form onSubmit={this.handleSubmit}>
                         <FormControlText
                             id="first"

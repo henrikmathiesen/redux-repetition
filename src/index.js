@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import validate from 'validate';
 
 import './index.css';
 import allReducers from './reducers/all-reducers';

@@ -15,6 +15,10 @@ Actions: Something happened that should change the state
 
 Reducers: Take an Action and update part of the state, then send new state to the Store
 
+### Form validation
+
+We are going to try https://github.com/cferdinandi/validate
+
 ## Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).

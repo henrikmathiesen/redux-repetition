@@ -24,17 +24,13 @@ class AddUser extends Component {
             thumbnail: ''
         }
 
-        this.validation = {
-            userHasTriedSubmitForm: false,
-            formIsValid: false,
-            requiredRules: {
-                id: false,
-                first: true,
-                last: true,
-                age: true,
-                description: true,
-                thumbnail: false
-            }
+        this.requiredRules = {
+            id: false,
+            first: true,
+            last: true,
+            age: true,
+            description: true,
+            thumbnail: false
         };
 
         this.state = {
@@ -46,12 +42,11 @@ class AddUser extends Component {
     handleSubmit(event) {
         event.preventDefault();
 
-        this.validation.userHasTriedSubmitForm = true;
-        this.validation.formIsValid = validate(this.state.user, this.validation.requiredRules);
+        const formIsValid = validate(this.state.user, this.requiredRules);
 
-        this.setState({ showValidationError: this.validation.userHasTriedSubmitForm && !this.validation.formIsValid });
+        this.setState({ showValidationError: !formIsValid });
 
-        if (this.validation.formIsValid) {
+        if (formIsValid) {
             this.props.newUser(this.state.user);
             this.setState({ user: this.emptyUser });
         }
@@ -68,7 +63,9 @@ class AddUser extends Component {
             <div className="Add-user">
                 <div className="Add-user__inner">
                     <h2 className="Add-user__header">Add user</h2>
-                    {this.state.showValidationError ? <p className="Add-user__validation-message">All fields except thumbnail are required</p> : null}
+                    <p className={'Add-user__validation-message' + (this.state.showValidationError ? ' Add-user__validation-message--error' : '')}>
+                        * All fields except thumbnail are required
+                    </p>
                     <form onSubmit={this.handleSubmit}>
                         <FormControlText
                             id="first"

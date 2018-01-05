@@ -17,12 +17,12 @@
     margin: 0;
 }
 
-.Users-list__list-item {
-    cursor: pointer;
-}
-
 .Users-list__list-item + .Users-list__list-item {
     margin-top: 0.5rem;
+}
+
+.Users-list__list-item-text {
+    cursor: pointer;
 }
 
 .Users-list__list-item button {

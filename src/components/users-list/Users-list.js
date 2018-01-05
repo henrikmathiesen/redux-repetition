@@ -17,7 +17,7 @@ class UsersList extends Component {
                 <li className="Users-list__list-item"
                     data-id={user.id}
                     key={user.id}>
-                    <span onClick={() => this.props.selectUser(user)}>{user.first} {user.last}</span>
+                    <span className="Users-list__list-item-text" onClick={() => this.props.selectUser(user)}>{user.first} {user.last}</span>
                     <FormControlButton
                         label="Remove"
                         background={colorsConstant.DANGER}

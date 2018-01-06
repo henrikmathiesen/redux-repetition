@@ -16,6 +16,16 @@ const selectedUserReducer = (state = null, action) => {
 
             return state;
         }
+        case usersActionsConstant.UPDATE_USER: {
+            const thereIsASelectedUser = () => state !== null;
+            const updatedUserIsSelectedUser = () => state.id === action.user.id;
+
+            if(thereIsASelectedUser() && updatedUserIsSelectedUser()) {
+                state = Object.assign({}, action.user);
+            }
+
+            return state;
+        }
         default: {
             return state;
         }

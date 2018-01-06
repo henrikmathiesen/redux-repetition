@@ -6,15 +6,15 @@ import './User-details.css';
 class UserDetails extends Component {
 
     renderUserThumbnail() {
-        if (!this.props.user.thumbnail) {
+        if (!this.props.selectedUser.thumbnail) {
             return null;
         }
 
-        return (<img src={this.props.user.thumbnail} alt="" />);
+        return (<img src={this.props.selectedUser.thumbnail} alt="" />);
     }
 
     renderUserDetails() {
-        if (!this.props.user) { 
+        if (!this.props.selectedUser) { 
             return (
                 <div className="User-details__inner">
                     <h2 className="User-details__header">Select a user ...</h2>
@@ -25,9 +25,9 @@ class UserDetails extends Component {
                 <div className="User-details__inner">
                     <h2 className="User-details__header">User Details</h2>
                     {this.renderUserThumbnail()}
-                    <h3>{this.props.user.first} {this.props.user.last}</h3>
-                    <h3>Age: {this.props.user.age}</h3>
-                    <p>Description: {this.props.user.description}</p>
+                    <h3>{this.props.selectedUser.first} {this.props.selectedUser.last}</h3>
+                    <h3>Age: {this.props.selectedUser.age}</h3>
+                    <p>Description: {this.props.selectedUser.description}</p>
                 </div>
             );
         }
@@ -44,7 +44,7 @@ class UserDetails extends Component {
 
 function mapStateToProps(state) {
     return {
-        user: state.selectedUser
+        selectedUser: state.selectedUser
     }
 }
 

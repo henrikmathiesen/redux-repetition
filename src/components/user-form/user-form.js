@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import './Add-user.css';
+import './user-form.css';
 import validate from 'utils/validate';
 import { newUser } from 'actions/users-actions';
 import { FormControlButton, FormControlText, FormValidationMessage } from 'components/form-controls';
 
-class AddUser extends Component {
+class UserForm extends Component {
 
     constructor() {
         super();
@@ -60,9 +60,9 @@ class AddUser extends Component {
 
     render() {
         return (
-            <div className="Add-user">
-                <div className="Add-user__inner">
-                    <h2 className="Add-user__header">Add user</h2>
+            <div className="User-form">
+                <div className="User-form__inner">
+                    <h2 className="User-form__header">Add user</h2>
                     
                     <FormValidationMessage  
                         shouldAlert={this.state.showValidationError}
@@ -94,7 +94,7 @@ class AddUser extends Component {
                             label="Thumbnail url"
                             value={this.state.user.thumbnail}
                             onChange={this.handleChange} />
-                        <div className="Add-user__button-container">
+                        <div className="User-form__button-container">
                             <FormControlButton
                                 shouldSubmit={true}
                                 label="Submit" />
@@ -111,4 +111,4 @@ function matchDispatchToProps(dispatch) {
     return bindActionCreators({ newUser }, dispatch);
 }
 
-export default connect(null, matchDispatchToProps)(AddUser);
+export default connect(null, matchDispatchToProps)(UserForm);

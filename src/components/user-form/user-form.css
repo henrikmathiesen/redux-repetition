@@ -1,8 +1,8 @@
-.Add-user {
+.User-form {
     padding: 1.5rem;
 }
 
-.Add-user__inner {
+.User-form__inner {
     border: 1px solid lightgray;
     padding: 1.5rem;
     display: flex;
@@ -10,11 +10,11 @@
     align-items: center;
 }
 
-.Add-user__header {
+.User-form__header {
     margin-top: 0;
 }
 
-.Add-user__button-container {
+.User-form__button-container {
     text-align: right;
     margin-top: 1.5rem;
 }

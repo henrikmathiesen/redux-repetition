@@ -18,3 +18,7 @@
     text-align: right;
     margin-top: 1.5rem;
 }
+
+.User-form__button-container button + button {
+    margin-left: 0.5rem;
+}

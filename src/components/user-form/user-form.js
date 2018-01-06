@@ -3,8 +3,10 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import './user-form.css';
+import colorsConstant from 'constants/colors-constant';
 import validate from 'utils/validate';
 import { newUser } from 'actions/users-actions';
+import { editUser } from 'actions/edit-user-actions';
 import { FormControlButton, FormControlText, FormValidationMessage } from 'components/form-controls';
 
 class UserForm extends Component {
@@ -14,6 +16,11 @@ class UserForm extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+
+        this.label = {
+            default: 'Add user',
+            editUser: 'Edit user'
+        };
 
         this.emptyUser = {
             id: 0,
@@ -35,8 +42,18 @@ class UserForm extends Component {
 
         this.state = {
             user: this.emptyUser,
-            showValidationError: false
+            showValidationError: false,
+            label: this.label.default,
+            canCancel: false
         };
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const label = nextProps.userToEdit ? this.label.editUser : this.label.default;
+        const user = nextProps.userToEdit || this.emptyUser;
+        const canCancel = !!nextProps.userToEdit;
+        
+        this.setState({ user, label, canCancel });
     }
 
     handleSubmit(event) {
@@ -48,8 +65,12 @@ class UserForm extends Component {
 
         if (formIsValid) {
             this.props.newUser(this.state.user);
-            this.setState({ user: this.emptyUser });
+            this.setState({ user: this.emptyUser, label: this.label.default });
         }
+
+        // TODO, update the new user
+        // if !valid return
+        // if new > new else update
     }
 
     handleChange(event) {
@@ -58,13 +79,26 @@ class UserForm extends Component {
         this.setState({ user });
     }
 
+    renderCancelButton() {
+        if (this.state.canCancel) {
+            return (
+                <FormControlButton
+                    label="Cancel"
+                    background={colorsConstant.WARNING} 
+                    onClick={() => {this.props.editUser(null)}} />
+            );
+        }
+
+        return null;
+    }
+
     render() {
         return (
             <div className="User-form">
                 <div className="User-form__inner">
-                    <h2 className="User-form__header">Add user</h2>
-                    
-                    <FormValidationMessage  
+                    <h2 className="User-form__header">{this.state.label}</h2>
+
+                    <FormValidationMessage
                         shouldAlert={this.state.showValidationError}
                         message="All fields except thumbnail are required" />
 
@@ -95,6 +129,7 @@ class UserForm extends Component {
                             value={this.state.user.thumbnail}
                             onChange={this.handleChange} />
                         <div className="User-form__button-container">
+                            {this.renderCancelButton()}
                             <FormControlButton
                                 shouldSubmit={true}
                                 label="Submit" />
@@ -107,8 +142,14 @@ class UserForm extends Component {
 
 }
 
-function matchDispatchToProps(dispatch) {
-    return bindActionCreators({ newUser }, dispatch);
+function mapStateToProps(state) {
+    return {
+        userToEdit: state.userToEdit
+    }
 }
 
-export default connect(null, matchDispatchToProps)(UserForm);
+function matchDispatchToProps(dispatch) {
+    return bindActionCreators({ newUser, editUser }, dispatch);
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(UserForm);

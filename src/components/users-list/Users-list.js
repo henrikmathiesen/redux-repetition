@@ -7,6 +7,7 @@ import colorsConstant from 'constants/colors-constant';
 import sizesConstant from 'constants/sizes-constant';
 import { selectUser } from 'actions/select-user-actions';
 import { deleteUser } from 'actions/users-actions';
+import { editUser } from 'actions/edit-user-actions';
 import { FormControlButton } from 'components/form-controls';
 
 class UsersList extends Component {
@@ -26,7 +27,8 @@ class UsersList extends Component {
                     <FormControlButton
                         label="Edit" 
                         background={colorsConstant.WARNING}
-                        size={sizesConstant.SMALL} />
+                        size={sizesConstant.SMALL} 
+                        onClick={() => {this.props.editUser(user)}} />
                 </li>
             )
         )
@@ -53,7 +55,7 @@ function mapStateToProps(state) {
 }
 
 function matchDispatchToProps(dispatch) {
-    return bindActionCreators({ selectUser, deleteUser }, dispatch);
+    return bindActionCreators({ selectUser, deleteUser, editUser }, dispatch);
 }
 
 export default connect(mapStateToProps, matchDispatchToProps)(UsersList);

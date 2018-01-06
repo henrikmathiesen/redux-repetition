@@ -13,3 +13,10 @@ export const deleteUser = (id) => {
         id
     }
 }
+
+export const updateUser = (user) => {
+    return {
+        type: usersActionsConstant.UPDATE_USER,
+        user
+    }
+}

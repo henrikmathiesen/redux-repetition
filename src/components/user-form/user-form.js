@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import './user-form.css';
 import colorsConstant from 'constants/colors-constant';
 import validate from 'utils/validate';
-import { newUser } from 'actions/users-actions';
+import { newUser, updateUser } from 'actions/users-actions';
 import { editUser } from 'actions/edit-user-actions';
 import { FormControlButton, FormControlText, FormValidationMessage } from 'components/form-controls';
 
@@ -63,14 +63,17 @@ class UserForm extends Component {
 
         this.setState({ showValidationError: !formIsValid });
 
-        if (formIsValid) {
-            this.props.newUser(this.state.user);
-            this.setState({ user: this.emptyUser, label: this.label.default });
+        if(!formIsValid) {
+            return;
         }
 
-        // TODO, update the new user
-        // if !valid return
-        // if new > new else update
+        if(this.state.label === this.label.editUser) {
+            this.props.updateUser(this.state.user);
+        } else {
+            this.props.newUser(this.state.user);
+        }
+
+        this.setState({ user: this.emptyUser, label: this.label.default, canCancel: false });
     }
 
     handleChange(event) {
@@ -149,7 +152,7 @@ function mapStateToProps(state) {
 }
 
 function matchDispatchToProps(dispatch) {
-    return bindActionCreators({ newUser, editUser }, dispatch);
+    return bindActionCreators({ newUser, editUser, updateUser }, dispatch);
 }
 
 export default connect(mapStateToProps, matchDispatchToProps)(UserForm);

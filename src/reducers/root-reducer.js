@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import usersReducer from './users-reducer';
-import selectedUserReducer from './selected-user-reducer';
-import editUserReducer from './edit-user-reducer';
+import userSelectedReducer from './user-selected-reducer';
+import userToEditReducer from './user-to-edit-reducer';
 
 const rootReducer = combineReducers({
     users: usersReducer,
-    selectedUser: selectedUserReducer,
-    userToEdit: editUserReducer
+    userSelected: userSelectedReducer,
+    userToEdit: userToEditReducer
 });
 
 export default rootReducer;

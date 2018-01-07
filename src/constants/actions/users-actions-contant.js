@@ -1,7 +1,7 @@
 const usersActionsConstant = {
-    NEW_USER: 'NEW_USER',
-    DELETE_USER: 'DELETE_USER',
-    UPDATE_USER: 'UPDATE_USER'
+    USER_CREATE: 'USER_CREATE',
+    USER_DELETE: 'USER_DELETE',
+    USER_UPDATE: 'USER_UPDATE'
 };
 
 export default usersActionsConstant;

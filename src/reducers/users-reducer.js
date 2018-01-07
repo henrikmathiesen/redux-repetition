@@ -1,26 +1,26 @@
 import usersActionsConstant from 'constants/actions/users-actions-contant';
 import seedUsers from 'utils/seed-users';
 
-const usersReducer = (state = seedUsers(), action) => {
+const usersReducer = (users = seedUsers(), action) => {
 
     switch (action.type) {
-        case usersActionsConstant.NEW_USER: {
+        case usersActionsConstant.USER_CREATE: {
             const newUser = Object.assign({}, action.user);
-            const latestUser = state[state.length - 1];
+            const latestUser = users[users.length - 1];
 
             newUser.id = latestUser ? (latestUser.id + 1) : 1;
             newUser.age = parseInt(newUser.age, 10);
 
             return [
-                ...state, newUser
+                ...users, newUser
             ];
         }
-        case usersActionsConstant.DELETE_USER: {
-            return state.filter(user => user.id !== action.id);
+        case usersActionsConstant.USER_DELETE: {
+            return users.filter(user => user.id !== action.id);
         }
-        case usersActionsConstant.UPDATE_USER: {
+        case usersActionsConstant.USER_UPDATE: {
             const updatedUser = Object.assign({}, action.user);
-            const newState = [...state];
+            const newState = [...users];
 
             newState.forEach((user, i, arr) => {
                 if (user.id === updatedUser.id) {
@@ -31,7 +31,7 @@ const usersReducer = (state = seedUsers(), action) => {
             return newState;
         }
         default: {
-            return state;
+            return users;
         }
     }
 

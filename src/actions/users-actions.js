@@ -1,22 +1,22 @@
 import usersActionsConstant from 'constants/actions/users-actions-contant';
 
-export const newUser = (user) => {
+export const userCreate = (user) => {
     return {
-        type: usersActionsConstant.NEW_USER,
+        type: usersActionsConstant.USER_CREATE,
         user
     }
 };
 
-export const deleteUser = (id) => {
+export const userDelete = (id) => {
     return {
-        type: usersActionsConstant.DELETE_USER,
+        type: usersActionsConstant.USER_DELETE,
         id
     }
 }
 
-export const updateUser = (user) => {
+export const userUpdate = (user) => {
     return {
-        type: usersActionsConstant.UPDATE_USER,
+        type: usersActionsConstant.USER_UPDATE,
         user
     }
 }

@@ -20,15 +20,15 @@ const usersReducer = (users = seedUsers(), action) => {
         }
         case usersActionsConstant.USER_UPDATE: {
             const updatedUser = Object.assign({}, action.user);
-            const newState = [...users];
+            const newUsers = [...users];
 
-            newState.forEach((user, i, arr) => {
+            newUsers.forEach((user, i, arr) => {
                 if (user.id === updatedUser.id) {
                     arr[i] = updatedUser;
                 }
             });
 
-            return newState;
+            return newUsers;
         }
         default: {
             return users;

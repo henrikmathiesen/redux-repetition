@@ -1,5 +1,5 @@
 import usersActionsConstant from 'constants/actions/users-actions-contant';
-import seedUsers from 'utils/seedUsers';
+import seedUsers from 'utils/seed-users';
 
 const usersReducer = (state = seedUsers(), action) => {
 

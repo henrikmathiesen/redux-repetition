@@ -4,11 +4,15 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 import './index.css';
+import isDebugMode from 'utils/is-debug-mode';
 import allReducers from './reducers/all-reducers';
 import registerServiceWorker from './registerServiceWorker';
 import App from './components/App';
 
-const store = createStore(allReducers);
+const store = createStore(
+    allReducers, 
+    isDebugMode() && window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
     <Provider store={store}>

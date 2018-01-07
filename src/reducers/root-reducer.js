@@ -3,10 +3,10 @@ import usersReducer from './users-reducer';
 import selectedUserReducer from './selected-user-reducer';
 import editUserReducer from './edit-user-reducer';
 
-const allReducers = combineReducers({
+const rootReducer = combineReducers({
     users: usersReducer,
     selectedUser: selectedUserReducer,
     userToEdit: editUserReducer
 });
 
-export default allReducers;
+export default rootReducer;

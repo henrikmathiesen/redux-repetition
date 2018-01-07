@@ -5,12 +5,12 @@ import { createStore } from 'redux';
 
 import './index.css';
 import isDebugMode from 'utils/is-debug-mode';
-import allReducers from './reducers/all-reducers';
+import rootReducer from './reducers/root-reducer';
 import registerServiceWorker from './registerServiceWorker';
 import App from './components/App';
 
 const store = createStore(
-    allReducers, 
+    rootReducer, 
     isDebugMode() && window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

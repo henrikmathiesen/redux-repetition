@@ -19,7 +19,7 @@ describe('User selected reducer test', () => {
 
     describe('User selecter reducer will react to other actions', () => {
         it('Removes a deleted user from user selected, if the deleted user is selected', () => {
-
+            
         });
 
         it('Does NOT Remove a user from user selected, if the deleted user is NOT selected', () => {

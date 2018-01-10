@@ -3,5 +3,12 @@ import userEditActionsConstant from 'constants/actions/user-edit-actions-constan
 import usersActionsConstant from 'constants/actions/users-actions-contant';
 
 describe('Users to edit reducer test', () => {
+    it('', () => {
+
+    });
+
+    describe('User to edit reducer will react to other actions', () => { 
+
+    });
 
 });

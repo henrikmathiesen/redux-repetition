@@ -16,4 +16,22 @@ describe('User selected reducer test', () => {
 
         expect(actual === user).toEqual(true, "the state has not changed, therefor it is the same instance");
     });
+
+    describe('User selecter reducer will react to other actions', () => {
+        it('Removes a deleted user from user selected, if the deleted user is selected', () => {
+
+        });
+
+        it('Does NOT Remove a user from user selected, if the deleted user is NOT selected', () => {
+
+        });
+
+        it('Updates the user selected if updated user is selected', () => {
+
+        });
+
+        it('Does NOT update the user selected if updated user is NOT selected', () => {
+
+        });
+    });
 });

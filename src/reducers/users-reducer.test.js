@@ -1,7 +1,25 @@
 import usersReducer from './users-reducer';
 import usersActionsConstant from 'constants/actions/users-actions-contant';
+import seedUsers from 'utils/seed-users';
 
 describe('Users reducer test', () => {
+
+    describe('Seed users', () => {
+        it('Seeds users initialy so we have data to work with, a copy is returned', () => { 
+            const initalUsers = seedUsers();
+
+            const actual = usersReducer(undefined, {
+                type: 'SOME_OTHER_ACTION',
+                payload: null
+            });
+
+            expect(initalUsers).toEqual(actual, 'It is a copy');
+            expect(initalUsers).not.toBe(actual, 'It is NOT the same reference');
+            
+            expect(JSON.stringify(initalUsers) == JSON.stringify(actual)).toEqual(true, 'Again, a copy');
+            expect(initalUsers != actual).toEqual(true, 'Again, not the same reference');
+        });
+    });
 
     describe('usersActionsConstant.USER_CREATE', () => {
         it('Adds a new user to users', () => {

@@ -44,6 +44,7 @@ describe('User selected reducer test', () => {
             });
 
             expect(actual !== null).toEqual(true);
+            expect(actual === selectedUser).toEqual(true, 'The selected user is simply returned');
         });
 
         it('Updates the user selected if updated user is selected', () => {

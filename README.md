@@ -19,6 +19,10 @@ Reducers: Take an Action and update part of the state, then send new state to th
 
 We are going to try https://github.com/cferdinandi/validate . I dont think it is a good fit for a React application though, so we dont use it. Instead we do some crude manual validation.
 
+### Absolute import paths
+
+We need the .env file and the jsconfig.json file
+
 ## Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).

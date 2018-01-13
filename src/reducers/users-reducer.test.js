@@ -18,6 +18,10 @@ describe('Users reducer test', () => {
             
             expect(JSON.stringify(initalUsers) == JSON.stringify(actual)).toEqual(true, 'Again, a copy');
             expect(initalUsers != actual).toEqual(true, 'Again, not the same reference');
+
+            // Note: == and === comparison, both will check if it is the same object reference
+            // .toEqual in Jasmine/Jest will check if 2 objects have the same properties and values
+            // .toBe in Jasmine/Jest will check if 2 variabels point to the same reference
         });
     });
 
